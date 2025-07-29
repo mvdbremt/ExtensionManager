@@ -8,4 +8,8 @@ public class DirectoryCreator {
         file.mkdir();
 
     }
+
+    public void moveFile(File f){
+        f.renameTo(new File(file.getPath().toString()+"\\"+f.getName()));
+    }
 }

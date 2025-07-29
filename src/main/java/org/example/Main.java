@@ -14,7 +14,7 @@ public class Main {
 
             if (f.getName().split("\\.").length<2)continue;
             if(f.getName().split("\\.")[f.getName().split("\\.").length-1].equals("txt")){
-                f.renameTo(new File(creators.get("txt").file.getPath().toString()+"\\"+f.getName()));
+                creators.get("txt").moveFile(f);
             }
         }
 
