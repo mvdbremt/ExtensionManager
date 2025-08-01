@@ -6,16 +6,26 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
+        String presentFileName="test";
+        if(args.length>0){
+            presentFileName=args[0];
+        }
         HashMap<String,DirectoryCreator> creators= new HashMap<>();
-        creators.put("txt",new DirectoryCreator("testV3\\txt"));
-        File here =new File("testV3");
+
+        File here =new File(presentFileName);
+        if(!here.exists()){
+            throw new RuntimeException("No such file : "+presentFileName);
+        }
         File[] list= here.listFiles();
         for (File f : list){
 
             if (f.getName().split("\\.").length<2)continue;
-            if(f.getName().split("\\.")[f.getName().split("\\.").length-1].equals("txt")){
-                creators.get("txt").moveFile(f);
+            String type=f.getName().split("\\.")[f.getName().split("\\.").length-1];
+            if(!creators.keySet().contains(type )){
+                creators.put(type,new DirectoryCreator(presentFileName+"\\"+type));
+
             }
+            creators.get(type).moveFile(f);
         }
 
     }
