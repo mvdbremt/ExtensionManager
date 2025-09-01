@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        String presentFileName="test"; //Default directory name for directory to reorganise
+        String presentFileName="."; //Default directory name for directory to reorganise
         if(args.length>0){
             //Get name of directory to organise from arguments if arguments not empty
             presentFileName=args[0];
