@@ -28,15 +28,16 @@ public class Main {
         //Main organisation loop
         assert list != null;
         for (File f : list){
-
+            //seperate name from extension and verify if it has extension
             if (f.getName().split("\\.").length<2)continue;
-
+            //seperate name from extension and takes extension
             String type=f.getName().split("\\.")[f.getName().split("\\.").length-1];
 
             if(!creators.containsKey(type )){
-                creators.put(type,new DirectoryCreator(presentFileName+"\\"+type));
+                //add unique new DirectoryCreator for each type
+                creators.put(type,new DirectoryCreator(presentFileName+File.separator+type));
             }
-
+            //use DirectoryCreator to move file to right place
             creators.get(type).moveFile(f);
         }
 
