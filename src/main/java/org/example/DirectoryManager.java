@@ -21,6 +21,6 @@ public class DirectoryManager {
      * @param f : File that must be moves in directory
      */
     public void moveFile(File f){
-        f.renameTo(new File(file.getPath() +"\\"+f.getName()));
+        f.renameTo(new File(file.getPath() + File.separator+f.getName()));
     }
 }
