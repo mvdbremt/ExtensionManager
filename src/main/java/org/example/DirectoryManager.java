@@ -1,7 +1,7 @@
 package org.example;
 
 import java.io.*;
-public class DirectoryCreator {
+public class DirectoryManager {
     File file;
 
     /**
@@ -9,7 +9,7 @@ public class DirectoryCreator {
      * @param name : Name for new directory
      *
      */
-    public DirectoryCreator(String name){
+    public DirectoryManager(String name){
 
         file = new File(name);
         file.mkdir();
@@ -17,7 +17,7 @@ public class DirectoryCreator {
     }
 
     /**
-     * Moves a file to the directory contained in DirectoryCreator
+     * Moves a file to the directory contained in DirectoryManager
      * @param f : File that must be moves in directory
      */
     public void moveFile(File f){

@@ -12,8 +12,8 @@ public class Main {
             presentFileName=args[0];
         }
 
-        //Hashmap containing DirectoryCreator for every extension in directory
-        HashMap<String,DirectoryCreator> creators= new HashMap<>();
+        //Hashmap containing DirectoryManager for every extension in directory
+        HashMap<String, DirectoryManager> creators= new HashMap<>();
 
         //Finds directory to organise
         File here =new File(presentFileName);
@@ -34,10 +34,10 @@ public class Main {
             String type=f.getName().split("\\.")[f.getName().split("\\.").length-1];
 
             if(!creators.containsKey(type )){
-                //add unique new DirectoryCreator for each type
-                creators.put(type,new DirectoryCreator(presentFileName+File.separator+type));
+                //add unique new DirectoryManager for each type
+                creators.put(type,new DirectoryManager(presentFileName+File.separator+type));
             }
-            //use DirectoryCreator to move file to right place
+            //use DirectoryManager to move file to right place
             creators.get(type).moveFile(f);
         }
 

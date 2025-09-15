@@ -8,10 +8,10 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DirectoryCreatorTest {
+class DirectoryManagerTest {
     @Test
     void doesCreatorCreateFile(){
-        DirectoryCreator dc= new DirectoryCreator("testV2");
+        DirectoryManager dc= new DirectoryManager("testV2");
         File f= new File("testV2");
         assertTrue(f.exists());
         f.delete();
@@ -19,7 +19,7 @@ class DirectoryCreatorTest {
 
     @Test
     void doesmoveFile() {
-        DirectoryCreator dc= new DirectoryCreator("testV2");
+        DirectoryManager dc= new DirectoryManager("testV2");
         File f= new File("testV2");
         File f2= new File("movetest.txt");
         try {
