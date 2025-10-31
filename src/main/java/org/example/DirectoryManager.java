@@ -1,6 +1,10 @@
 package org.example;
 
 import java.io.*;
+
+/**
+ * Class that manages each directory
+ */
 public class DirectoryManager {
     File file;
 

@@ -4,7 +4,14 @@ import java.io.File;
 
 import java.util.HashMap;
 
+/**
+ * Main class for running program
+ */
 public class Main {
+    /**
+     * Runs main program
+     * @param args Start arguments that are used to find directory to order
+     */
     public static void main(String[] args) {
         String presentFileName="."; //Default directory name for directory to reorganise
         if(args.length>0){
